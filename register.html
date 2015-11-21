@@ -4,17 +4,11 @@
 <style type="text/css">
       body{background-image: url("business.jpg");}
 </style>
+
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script type="text/javascript">
-
-/*
-    below script makes the register button disabled when at least one the form fields is empty.
-*/
-
-<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script type = "text/javascript">
+/*below script makes the register button disabled when at least one the form fields is empty.*/
       $(document).ready(function() {
-
         $('#form').keyup(function(){
           if($('#password').val() != "" && $('#username').val() != ""){
             $('#submit').removeAttr('disabled');
@@ -63,7 +57,7 @@
 <div id = "test" style="width: 350px; margin-right: auto; margin-left: auto;"/>
 <h2>Please enter your info:</h2>
 
-<form method="post" action="cgi-bin/register.py" id = "form">
+<form method="post" action="cgi-bin/server.js" id = "form">
 
 
 
@@ -72,10 +66,21 @@
 <br/>
 
 <label>Password:&nbsp</label> <input name="pass_word" id = "password" type=password size="30"/>
-
 <br/>
 
-<label>(Optional)AdminPassword:</label> <input name="admin_password" type=text size="30"/>
+<label>Current City:</label> <input name="city" type=text size="30"/>
+<br/>
+
+<label>Current State:</label> <input name="state" type=text size="30"/>
+<br/>
+
+<label>LinkedIn Account URL:</label> <input name="linkedin" type=text size="30"/>
+<br/>
+
+<label>GoogleID:</label> <input name="googleid" type=text size="30"/>
+<br/>
+
+<label>AppleID:</label> <input name="appleid" type=text size="30"/>
 <br/>
 <input type="submit" id = "submit" value = "Register" disabled = "disabled"/>
 

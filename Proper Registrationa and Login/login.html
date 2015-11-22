@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>CollabRater</title>
+		<style type="text/css">
+			body{background-image: url("business.jpg");}
+		</style>
+		<!--script below checks if the password field is empty.
+			If it is empty, the "log in" button should be disabled.
+			If it is not empty, it should be enabled.!-->
+		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script type = "text/javascript">
+			//////////////////////////////////////////////////////
+			// first part handles edge case where username/pword//
+			// is already saved in browser.						//
+			//////////////////////////////////////////////////////
+			$(document).ready(function() {
+				if($('#password').val() != "" && $('#username').val() != ""){
+					$('#submit').removeAttr('disabled');
+				}
+			});
+			/*second part enables "log in" button if both fields are non-empty strings,
+			and disables it if they are both empty strings.*/
+			$(document).ready(function() {
+				
+
+				$('#form').keyup(function(){
+					if($('#password').val() != "" && $('#username').val() != ""){
+						$('#submit').removeAttr('disabled');
+					}
+					else if($('#password').val() == "" || $('#username').val() == ""){
+						$('#submit').attr('disabled', 'disabled');
+					}
+				});
+			/*And this part disables the "log in" button again if user
+			hits the reset button.*/
+
+				$('#reset').click(function(){
+					$('#submit').attr('disabled', 'disabled');				
+				});
+ 			});
+		</script>
+
+		
+
+
+	</head>
+
+	<body>
+		<div id = "test" style="width: 350px; margin-right: auto; margin-left: auto;"/>
+		
+		<h2>Log In here:</h2>
+
+		<form method="post" action="cgi-bin/login.py" id = "form">
+
+
+		<label>Username:</label> <input id = "username" name="username" type=text size="30"/>
+		<br>
+		<label>Password:&nbsp</label> <input id = "password" name="password" type=password size="30"/>
+		<br>
+		<input type="submit" id = "submit" value = "Log In" disabled = "disabled"/> <input type="reset" id = "reset"/>
+
+		<div id = "error"></div>
+
+		<p>Don't Have An Account? <a href="register.html">Sign up here.</a></p>
+		
+	</body>
+
+</html>

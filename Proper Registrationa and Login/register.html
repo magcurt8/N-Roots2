@@ -1,0 +1,89 @@
+<html>
+<head>
+<title>N-Roots</title>
+<style type="text/css">
+      body{background-image: url("business.jpg");}
+</style>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+/*below script makes the register button disabled when at least one the form fields is empty.*/
+
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type = "text/javascript">
+      $(document).ready(function() {
+
+        $('#form').keyup(function(){
+          if($('#password').val() != "" && $('#username').val() != ""){
+            $('#submit').removeAttr('disabled');
+          }
+          else if($('#password').val() == "" || $('#username').val() == ""){
+            $('#submit').attr('disabled', 'disabled');
+          }
+        });
+      });
+    </script>
+  <!--This script does exactly what the "check username" button did, but will activate on $('#username').keyup() so we don't need a check username button.!-->
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $("#username").keyup(function(){
+        console.log($("#username").val());
+        $.ajax({
+        url: "cgi-bin/namecheck.py",
+        type: "GET",
+        data: {
+          stuff: $('#username').val()
+        },
+        dataType: "json",
+        success: function(dat){
+          console.dir(dat);
+          $("#stuff").text(dat.name);
+        },
+      })
+      });  
+    });
+  </script>
+
+
+</head>
+
+<body>
+
+<div id = "test" style="width: 350px; margin-right: auto; margin-left: auto;"/>
+<h2>Please enter your info (*'s are optional):</h2>
+
+<form method="post" action="cgi-bin/register.py" id = "form">
+
+
+<label>Username:</label> <input name="username" id = "username" type=text size="30"/>
+<div id="stuff"></div>
+<br/>
+
+<label>Password:&nbsp</label> <input name="password" id = "password" type=password size="30"/>
+<br/>
+
+<label>*Current City:</label> <input name="city" type=text size="30"/>
+<br/>
+
+<label>*Current State:</label> <input name="state" type=text size="30"/>
+<br/>
+
+<label>*LinkedIn Account URL:</label> <input name="linkedin" type=text size="30"/>
+<br/>
+
+<label>*GoogleID:</label> <input name="googleid" type=text size="30"/>
+<br/>
+
+<label>*AppleID:</label> <input name="appleid" type=text size="30"/>
+<br/>
+<input type="submit" id = "submit" value = "Register" disabled = "disabled"/>
+
+</form>
+
+<a href="login.html">Return to Login Page</a>
+
+
+
+</body>
+
+</html>

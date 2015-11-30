@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 
-<!--<html lang="en">!-->
-
 	<head>
-		<!--<meta charset="utf-8">!-->
 		<title>N-Roots</title>
 		<style type="text/css">
 			body{
@@ -19,17 +16,11 @@
 
 			}
 		</style>
-
-		<!--
-			script below checks if the password field is empty.
+		<!--script below checks if the password field is empty.
 			If it is empty, the "log in" button should be disabled.
-			If it is not empty, it should be enabled.
-		!-->
-
+			If it is not empty, it should be enabled.!-->
 		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 		<script type = "text/javascript">
-
-
 			//////////////////////////////////////////////////////
 			// first part handles edge case where username/pword//
 			// is already saved in browser.						//
@@ -39,12 +30,8 @@
 					$('#submit').removeAttr('disabled');
 				}
 			});
-
-			/*
-				second part enables "log in" button if both fields are non-empty strings,
-				and disables it if they are both empty strings.
-			*/
-
+			/*second part enables "log in" button if both fields are non-empty strings,
+			and disables it if they are both empty strings.*/
 			$(document).ready(function() {
 				
 
@@ -56,11 +43,8 @@
 						$('#submit').attr('disabled', 'disabled');
 					}
 				});
-
-			/*
-				And this part disables the "log in" button again if user
-				hits the reset button.
-			*/
+			/*And this part disables the "log in" button again if user
+			hits the reset button.*/
 
 				$('#reset').click(function(){
 					$('#submit').attr('disabled', 'disabled');				

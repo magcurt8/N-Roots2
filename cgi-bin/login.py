@@ -1,4 +1,4 @@
-
+#!/usr/bin/python
 
 import cgi, Cookie, os, sqlite3
 import sys
@@ -18,7 +18,8 @@ if sys.argv[1:]:
     port = int(sys.argv[1])
 else:
     port = 8000
-server_address = ('127.0.0.1', port)
+    #server_address = ('127.0.0.1', port)
+    server_address=('localhost', port)
 
 HandlerClass.protocol_version = Protocol
 httpd = ServerClass(server_address, HandlerClass)
@@ -32,7 +33,7 @@ if cookie_string:
     my_cookie = Cookie.SimpleCookie(cookie_string)
     saved_session_id = my_cookie['session_id'].value
 
-    c.execute('select * from users where sessionID=?', (saved_session_id,))
+    c.execute('select * from peeps where sessionID=?', (saved_session_id,))
     all_results = c.fetchall()
     if len(all_results) > 0:
         print "Content-type: text/html"
@@ -40,7 +41,8 @@ if cookie_string:
         print "<html>"
         print "<body>"
         print "<h1>Welcome back " + all_results[0][0] + "</h1>"
-	print "<a href = '../home.html'>Go Home</a>"
+        #we would need to edit this home page most likely
+	    print "<a href = '../home.html'>Go Home</a>"
         print "</body>"
         print "</html>"
     else:
@@ -54,19 +56,19 @@ if cookie_string:
 
 else:
     form = cgi.FieldStorage()
-    usrname = form['user_name'].value
-    password = form['pass_word'].value
+    user_name = form['username'].value
+    pass_word = form['password'].value
     
     # check whether my_name is in accounts.db
-    c.execute('select * from users where username=? and password=?;', (usrname,password))
+    c.execute('select * from peers where username=? and password=?;', (user_name,pass_word))
     all_results = c.fetchall()
     if len(all_results) > 0:
 
         import uuid
         session_id = str(uuid.uuid4())
 
-        c.execute('update users set sessionID=? where username=?',
-                  (session_id, usrname))
+        c.execute('update peeps set sessionID=? where username=?',
+                  (session_id, user_name))
         conn.commit()
 
         cook = Cookie.SimpleCookie()
@@ -76,13 +78,14 @@ else:
 
         print "Content-type: text/html"
         print cook
-	print "Location:        ../home.html"
+	    print "Location:        ../home.html"
         print # don't forget newline
         print "<html>"
         print "<body>"
-        print "<h1>Hello, " + usrname +". You're now logged in.</h1>"
+        print "<h1>Hello, " + user_name +". You're now logged in.</h1>"
         print "<h2>session_id: " + session_id + "</h2>"
-	print "<a href = '../home.html'>Go Home</a>"
+        #another necessary change in reference here
+	    print "<a href = '../home.html'>Go Home</a>"
         print "</body>"
         print "</html>"
     else:
@@ -91,7 +94,6 @@ else:
         print "<html>"
         print "<body>"
         print "<h1>Sorry unregistered user</h1>"
-	print "<p><a href='../login.html'>Return To Main Page</a></p>"
+	    print "<p><a href='../login.html'>Return To Main Page</a></p>"
         print "</body>"
         print "</html>"
-

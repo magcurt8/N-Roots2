@@ -13,6 +13,7 @@ user_name = form['username'].value
 pass_word = form['password'].value
 ci_ty = form['city'].value
 sta_te = form['state'].value
+linked_in = form['linkedin'].value
 google_id = form['googleid'].value
 apple_id = form['appleid'].value
 session_id = str(uuid.uuid4())
@@ -58,7 +59,7 @@ try:
 
 	else:
 	
-		c.execute('insert into peeps values(?,?,?,?,?,?,?,null);', (user_name, pass_word, ci_ty, sta_te, google_id, apple_id))
+		c.execute('insert into peeps values(?,?,?,?,?,?,?,null);', (user_name, pass_word, ci_ty, sta_te, linked_in, google_id, apple_id))
 		conn.commit()
 
 		print "Content-type: text/html"

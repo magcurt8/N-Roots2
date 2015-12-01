@@ -1,32 +1,13 @@
 #!/usr/bin/python
 
 import cgi, Cookie, os, sqlite3
-import sys
-import BaseHTTPServer
-from SimpleHTTPServer import SimpleHTTPRequestHandler
-# to facilitate debugging
+
 import cgitb
 cgitb.enable()
 
 conn = sqlite3.connect('accounts.db')
 c = conn.cursor()
-HandlerClass = SimpleHTTPRequestHandler
-ServerClass  = BaseHTTPServer.HTTPServer
-Protocol     = "HTTP/1.0"
 
-if sys.argv[1:]:
-    port = int(sys.argv[1])
-else:
-    port = 8000
-    #server_address = ('127.0.0.1', port)
-    server_address=('localhost', port)
-
-HandlerClass.protocol_version = Protocol
-httpd = ServerClass(server_address, HandlerClass)
-
-sa = httpd.socket.getsockname()
-print "Serving HTTP on", sa[0], "port", sa[1], "..."
-httpd.serve_forever()
 
 cookie_string = os.environ.get('HTTP_COOKIE')
 if cookie_string:
@@ -42,7 +23,7 @@ if cookie_string:
         print "<body>"
         print "<h1>Welcome back " + all_results[0][0] + "</h1>"
         #we would need to edit this home page most likely
-	    print "<a href = '../home.html'>Go Home</a>"
+	    print "<a href = '../homepage.html'>Go Home</a>"
         print "</body>"
         print "</html>"
     else:
@@ -85,7 +66,7 @@ else:
         print "<h1>Hello, " + user_name +". You're now logged in.</h1>"
         print "<h2>session_id: " + session_id + "</h2>"
         #another necessary change in reference here
-	    print "<a href = '../home.html'>Go Home</a>"
+	    print "<a href = '../homepage.html'>Go Home</a>"
         print "</body>"
         print "</html>"
     else:

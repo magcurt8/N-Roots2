@@ -21,7 +21,7 @@ if cookie_string:
 	print "</html>"
 else:
 	print "Content-type: text/html"
-	print "Location:        http://mynroots/login.html"
+	print "Location:        http://mynroots.com/login.html"
 	print # don't forget newline
 	print "<html>"
 	print "<body>"

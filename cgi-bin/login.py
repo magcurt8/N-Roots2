@@ -23,7 +23,7 @@ if cookie_string:
         print "<body>"
         print "<h1>Welcome back " + all_results[0][0] + "</h1>"
         #we would need to edit this home page most likely
-	    print "<a href = '../homepage.html'>Go Home</a>"
+     print "<a href = '../homepage.html'>Go Home</a>"
         print "</body>"
         print "</html>"
     else:
@@ -41,7 +41,7 @@ else:
     pass_word = form['password'].value
     
     # check whether my_name is in accounts.db
-    c.execute('select * from peers where username=? and password=?;', (user_name,pass_word))
+    c.execute('select * from peeps where username=? and password=?;', (user_name,pass_word))
     all_results = c.fetchall()
     if len(all_results) > 0:
 
@@ -54,19 +54,19 @@ else:
 
         cook = Cookie.SimpleCookie()
         cook['session_id'] = session_id
- 	#cookie expires after one hour
+    #cookie expires after one hour
         cook['session_id']['max-age'] = 3600
 
         print "Content-type: text/html"
         print cook
-	    print "Location:        ../home.html"
+        print "Location:        ../homepage.html"
         print # don't forget newline
         print "<html>"
         print "<body>"
         print "<h1>Hello, " + user_name +". You're now logged in.</h1>"
         print "<h2>session_id: " + session_id + "</h2>"
         #another necessary change in reference here
-	    print "<a href = '../homepage.html'>Go Home</a>"
+        print "<a href = '../homepage.html'>Go Home</a>"
         print "</body>"
         print "</html>"
     else:
@@ -75,6 +75,6 @@ else:
         print "<html>"
         print "<body>"
         print "<h1>Sorry unregistered user</h1>"
-	    print "<p><a href='../login.html'>Return To Main Page</a></p>"
+        print "<p><a href='../login.html'>Return To Main Page</a></p>"
         print "</body>"
         print "</html>"

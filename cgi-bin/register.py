@@ -21,7 +21,7 @@ session_id = str(uuid.uuid4())
 #Creation of database
 conn = sqlite3.connect('accounts.db')
 c = conn.cursor()
-c.execute('''CREATE TABLE IF NOT EXISTS peeps (username String NOT NULL PRIMARY KEY, password String NOT NULL, city String NOT NULL, state String NOT NULL, linkedin String Not NULL, googleID String NOT NULL, appleID String NOT NULL, sessionID)''')
+c.execute('''CREATE TABLE IF NOT EXISTS peeps (username String NOT NULL PRIMARY KEY, password String NOT NULL, city String, state String, linkedin String, googleID String, appleID String, sessionID)''')
 c.execute('''CREATE TABLE IF NOT EXISTS companies (name String NOT NULL PRIMARY KEY, type String NOT NULL)''')
 c.execute('''CREATE TABLE IF NOT EXISTS todolist (username String NOT NULL PRIMARY KEY, type String NOT NULL, input String NOT NULL)''')
 c.execute('''CREATE TABLE IF NOT EXISTS contactlist (username String NOT NULL PRIMARY KEY, firstname String NOT NULL, lastname String NOT NULL, company String NOT NULL)''')

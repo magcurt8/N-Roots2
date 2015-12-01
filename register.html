@@ -10,7 +10,6 @@
         -o-background-size:cover;
         background-size: cover;
         font-family: "Lucida Sans Unicode";}
-      }
 </style>
 
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -33,7 +32,7 @@
   !-->
 
   <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-  <script>
+  <script type="text/javascript">
     $(document).ready(function(){
       $("#username").keyup(function(){
         console.log($("#username").val());
@@ -63,32 +62,32 @@
 <h1 style="text-align: center"><img src="NRoots_logo.png"/></h1>
 
 <div id = "test" style="width: 350px; margin-right: auto; margin-left: auto;"/>
-<h2>Please enter your info (*'s are optional):</h2>
+<h2>Please enter your info (*'s are required):</h2>
 
 <form method="post" action="cgi-bin/register.py" id = "form">
 
 
 
-<label>Username:</label> <input name="username" id = "username" type=text size="30"/>
+<label>*Username:</label> <input name="username" id = "username" type=text size="30"/>
 <div id="stuff"></div>
 <br/>
 
-<label>Password:&nbsp</label> <input name="password" id = "password" type=password size="30"/>
+<label>*Password:&nbsp</label> <input name="password" id = "password" type=password size="30"/>
 <br/>
 
-<label>*Current City:</label> <input name="city" type=text size="30"/>
+<label>Current City:</label> <input name="city" type=text size="30"/>
 <br/>
 
-<label>*Current State:</label> <input name="state" type=text size="30"/>
+<label>Current State:</label> <input name="state" type=text size="30"/>
 <br/>
 
-<label>*LinkedIn Account URL:</label> <input name="linkedin" type=text size="30"/>
+<label>LinkedIn Account URL:</label> <input name="linkedin" type=text size="30"/>
 <br/>
 
-<label>*GoogleID:</label> <input name="googleid" type=text size="30"/>
+<label>GoogleID:</label> <input name="googleid" type=text size="30"/>
 <br/>
 
-<label>*AppleID:</label> <input name="appleid" type=text size="30"/>
+<label>AppleID:</label> <input name="appleid" type=text size="30"/>
 <br/>
 <input type="submit" id = "submit" value = "Register" disabled = "disabled"/>
 

@@ -25,35 +25,35 @@
           }
         });
       });
-    </script>
+</script>
 
   <!--
       This script does exactly what the "check username" button did, but will activate on $('#username').keyup() so we don't need a check username button.
   !-->
 
-  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-  <script type="text/javascript">
-    $(document).ready(function(){
-      $("#username").keyup(function(){
-        console.log($("#username").val());
-        $.ajax({
-        url: "cgi-bin/namecheck.py",
-        type: "GET",
-        data: {
-          stuff: $('#username').val()
-        },
-        dataType: "json",
-        success: function(dat){
-          console.dir(dat);
-          $("#stuff").text(dat.name);
-        },
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#username").keyup(function(){
+      console.log($("#username").val());
+      $.ajax({
+      url: "cgi-bin/namecheck.py",
+      type: "GET",
+      data: {
+        stuff: $('#username').val()
+      },
+      dataType: "json",
+      success: function(dat){
+        console.dir(dat);
+        $("#stuff").text(dat.name);
+      },
 
-      })
+    })
 
-      });
-      
     });
-  </script>
+    
+  });
+</script>
 
 
 </head>

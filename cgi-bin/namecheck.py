@@ -15,7 +15,7 @@ conn = sqlite3.connect('accounts.db')
 c = conn.cursor()
 
 try:
-	c.execute('select * from users where username=?', (stuff,))
+	c.execute('select * from peeps where username=?', (stuff,))
 	all_results = c.fetchall()
 	if len(all_results) > 0:
 		print "Content-type: application/json"

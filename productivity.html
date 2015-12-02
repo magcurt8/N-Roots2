@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Foundation | Welcome</title>
+<title>N'Roots | Productivity</title>
 <link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
 </head>
 <body>
@@ -11,9 +11,13 @@
 
 <header class="header">
   <h1 class="main-header"></h1>
+
+  <h1 style="text-align: center"><img src="NRoots_logo3.png" alt="logo" width="250px"/></h1>
+
   <ul class="header-subnav">
     <li><a href="homepage.html">Home</a></li>
-    <li><a href="productivity.html" class="is-active">Productivity</a></li>
+    <li><a href="productivity.html" class="is-active">Schedule</a></li>
+    <li><a href="applications.html">Applications</a></li>
     <li><a href="contact.html">Contacts</a></li>
   </ul>
 </header>
@@ -73,12 +77,14 @@
     </div>
   </div>
 </div>
-<header>
+
+<div class="todolistside">
 <h1 align= center>To Do List</h1>
 <div align=center>
 <input id="new-todo" type="text" style= "width: 200px;" font="Lucida Sans Serif" placeholder="What do you have to do?">
 </div>
-</header>
+</div>
+
 <section id="main">
 <ul id="todo-list">
 </ul>
@@ -90,10 +96,11 @@
 .header {
   /*text-align: center;*/
   /*position: relative;*/
-  background: url("background.jpg") no-repeat center center;
+  background: #98a9d0;
   background-size: cover;
   padding: 4rem; }
-  .header .main-header {
+
+.header .main-header {
     color: #666;
      }
 
@@ -121,10 +128,7 @@
         background: rgba(250, 250, 250, 0.7);
         color: #333;
         transition: all .25s ease-in-out; }
-
         /* all of this stuff is fine*/
-
-
 .productivitypage {
 width: 100%;
 overflow:auo;
@@ -184,6 +188,13 @@ overflow:auo;
   font-weight: bold;
 }
 
+.row {
+  float:left;
+  padding-top: 10px;
+  background: #fff;
+  width: 900px;
+}
+
 .calendar ul {
   padding: 15px;
   background: #f3f3f3;
@@ -224,7 +235,6 @@ overflow:auo;
   padding: 2px 0;
 }
 /* Styles for Date Selector */
-
 $primary-color: #008cba;
 .month {
   height: 110px;
@@ -238,7 +248,6 @@ $primary-color: #008cba;
     padding: 20px;
     float: left;
     height: 100%;
-
     &:before {
       content: "";
       width: 0; 
@@ -258,7 +267,6 @@ $primary-color: #008cba;
     padding: 20px;
     float: right;
     height: 100%;
-
     &:before {
       content: "";
       width: 0; 
@@ -272,7 +280,6 @@ $primary-color: #008cba;
       opacity: 0.5;
     }
   }      
-
   h5 {
     color: #fff;
     margin: 42px 0 0;
@@ -284,17 +291,14 @@ $primary-color: #008cba;
     font-weight: bold;
   }
 }
-
 .calendar ul {
   padding: 15px;
   background: #f3f3f3;
   margin: 0;
-
   &.weekdays {
     padding: 10px 15px 3px;
     background: #f9f9f9;
   }
-
   li {
     list-style-type: none;
     display: inline-block;
@@ -310,18 +314,15 @@ $primary-color: #008cba;
       text-transform: uppercase;
       font-weight: bold;
     }
-
     a {
       color: #888;
       display: block;
       padding: 4px 0;
-
       &:hover {
         border-radius: 5px;
         background: #f9f9f9;
         color: $primary-color;
       }
-
       &.active {
         border-radius: 5px;
         border: 2px solid #ddd;
@@ -330,12 +331,12 @@ $primary-color: #008cba;
     }
   }
 }
-
 }
+
 .todolistside {
 	float: right;
 	height: 600px;
-	width:50%;
+	width:45%;
 	background: #fff;
 	padding: 20px;
 	margin-bottom: 40px;
@@ -370,7 +371,6 @@ border: 1px solid #999999;
 -ms-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0 inset;
 -o-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0 inset;
 box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0 inset;
-
 }
  .todolistside input::-webkit-input-placeholder {
  font-style: italic;
@@ -411,8 +411,6 @@ height: 20px;
 background-position: right;
 /*added*/
 background: url(destroy.png) no-repeat;
-
-
 }
 #todo-list li:hover .destroy {
 display: block;
@@ -443,13 +441,10 @@ word-break: break-word;
 #todo-list li .edit {
 display: none;
 }
-
 <ul id="todo-list">
 </ul><br type="_moz">
-
 </style>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="todos.js"></script>
 </body>
 </html>
-

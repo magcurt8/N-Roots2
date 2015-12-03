@@ -23,7 +23,7 @@ if cookie_string:
         print "<body>"
         print "<h1>Welcome back " + all_results[0][0] + "</h1>"
         #we would need to edit this home page most likely
-        print "<a href = '../homepage.html'>Go Home</a>"
+        print "<a href = '../planner.html'>Go Home</a>"
         print "</body>"
         print "</html>"
     else:
@@ -59,14 +59,14 @@ else:
 
         print "Content-type: text/html"
         print cook
-        print "Location:        ../homepage.html"
+        print "Location:        ../planner.html"
         print # don't forget newline
         print "<html>"
         print "<body>"
         print "<h1>Hello, " + user_name +". You're now logged in.</h1>"
         print "<h2>session_id: " + session_id + "</h2>"
         #another necessary change in reference here
-        print "<a href = '../homepage.html'>Go Home</a>"
+        print "<a href = '../planner.html'>Go Home</a>"
         print "</body>"
         print "</html>"
     else:

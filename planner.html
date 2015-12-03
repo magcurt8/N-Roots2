@@ -1,0 +1,490 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>N'Roots | Planner</title>
+<link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+</head>
+<body>
+<link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
+
+<header class="header">
+  <h1 class="main-header"></h1>
+
+  <h1 style="text-align: center"><img src="NRoots_logo.png" alt="logo" width="250px"/></h1>
+
+  <ul class="header-subnav">
+    <li><a href="planner.html" class="is-active">Planner</a></li>
+    <li><a href="applications.html">Applications</a></li>
+    <li><a href="contact.html">Contacts</a></li>
+  </ul>
+
+   <!--logout functionality !-->
+    <form method="post" id = "logout" action="cgi-bin/logout.py">
+    <br>
+    <input type="submit" value ="Log Out"/>
+</header>
+
+<!--calendar!-->
+<section>
+<div class="row">
+    <div class="large-4 large-centered columns">
+      <div class="calendar">
+        <div class="month">
+          <a href="#" class="back"></a>
+          <a href="#" class="next"></a>
+          <h5>September</h5>
+          <p>2014</p>
+        </div>
+        <ul class="weekdays">
+          <li><span href="#">Sun</span></li>
+          <li><span href="#">Mon</span></li>
+          <li><span href="#">Tue</span></li>
+          <li><span href="#">Wed</span></li>
+          <li><span href="#">Thu</span></li>
+          <li><span href="#">Fri</span></li>
+          <li><span href="#">Sat</span></li>
+        </ul>
+        <ul>  
+          <li><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+          <li><a href="#">6</a></li>
+          <li><a href="#">7</a></li>
+          <li><a href="#">8</a></li>
+          <li><a href="#">9</a></li>
+          <li><a href="#">10</a></li>
+          <li><a href="#">11</a></li>
+          <li><a href="#">12</a></li>
+          <li><a href="#">13</a></li>
+          <li><a href="#">14</a></li>
+          <li><a href="#">15</a></li>
+          <li><a href="#">16</a></li>
+          <li><a href="#">17</a></li>
+          <li><a href="#">18</a></li>
+          <li><a href="#" class="active">19</a></li>
+          <li><a href="#">20</a></li>
+          <li><a href="#">21</a></li>
+          <li><a href="#">22</a></li>
+          <li><a href="#">23</a></li>
+          <li><a href="#">24</a></li>
+          <li><a href="#">25</a></li>
+          <li><a href="#">26</a></li>
+          <li><a href="#">27</a></li>
+          <li><a href="#">28</a></li>
+          <li><a href="#">29</a></li>
+          <li><a href="#">30</a></li>
+        </ul>
+      </div>  
+    </div>
+  </div>
+
+<!--
+<div class="eventlist" border="2" style="float: left">
+  <h3>Events</h3>
+
+
+</div>
+!-->
+</section>
+
+<aside class="tasks">
+<div class="todolistside">
+<h3 text-align="center">Today's List</h3>
+  <ul>
+    <li>Item/Task</li>
+    <li>Item/Task</li>
+    <li><input type="submit" value ="New Task"/></li>
+  </ul> 
+</div>
+</aside>
+<aside id="taskTabs">
+  <table id="tabTable" border="1" width="100%">
+    <tr>
+      <td><strong>Today</strong></td>
+      <td>Week</td>
+      <td>Importance</td>
+      <td>Type</td>
+    </tr>
+  </table>
+</aside> 
+
+<style>
+/* all of this stuff is fine*/
+
+body {
+  align: center;
+}
+
+section {
+  float: left;
+  margin-top: 15px;
+  margin-left: -20px;
+  width: 63%;
+}
+
+.tasks {
+  float: right;
+  width: 30%;
+  border: 4px;
+  background: #fff;
+  padding-left: 30px;
+  margin-top: 15px;
+  margin-bottom: 0.5px;
+  margin-right: 80px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px 0;
+  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px 0;
+  -ms-box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px 0;
+  -o-box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px 0;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px 0;
+  -webkit-border-radius: 0 0 5px 5px;
+  -moz-border-radius: 0 0 5px 5px;
+  -ms-border-radius: 0 0 5px 5px;
+  -o-border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
+}
+
+#taskTabs {
+  float: right;
+  width: 30%;
+  background: #fff;
+  margin-right: 80px;
+  margin-bottom: 40px;
+}
+
+.header {
+  /*text-align: center;*/
+  /*position: relative;*/
+  background: #98a9d0;
+  background-size: cover;
+  padding: 4rem; }
+
+.header .main-header {
+    color: #666;
+     }
+
+.header-subnav {
+  float: none;
+  position: relative;
+  top: 4rem;
+  text-align: center;
+  margin-bottom: 0; }
+  .header-subnav li {
+    float: none;
+    display: inline-block; }
+    .header-subnav li a {
+      padding: 0.9rem 1rem 0.75rem;
+      font-size: 0.875rem;
+      color: #fff;
+      text-transform: uppercase;
+      display: block;
+      font-weight: bold;
+      letter-spacing: 1px; }
+      .header-subnav li a.is-active {
+        background: rgba(250, 250, 250, 0.7);
+        color: #333; }
+      .header-subnav li a:hover {
+        background: rgba(250, 250, 250, 0.7);
+        color: #333;
+        transition: all .25s ease-in-out; }
+
+#logout {
+  float: right;
+}
+        /* all of this stuff is fine*/
+.productivitypage {
+width: 100%;
+overflow:auo;
+}
+	/* Styles for Date Selector */
+.month {
+  height: 110px;
+  width: 100%;
+  background: #008cba;
+  overflow: hidden;
+  text-align: center;
+}
+.month .back {
+  position: relative;
+  padding: 20px;
+  float: left;
+  height: 100%;
+}
+.month .back:before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 8px solid #fff;
+  position: absolute;
+  top: 46px;
+  left: 22px;
+  opacity: 0.5;
+}
+.month .next {
+  position: relative;
+  padding: 20px;
+  float: right;
+  height: 100%;
+}
+.month .next:before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 8px solid #fff;
+  position: absolute;
+  top: 46px;
+  right: 22px;
+  opacity: 0.5;
+}
+.month h5 {
+  color: #fff;
+  margin: 42px 0 0;
+  text-transform: uppercase;
+}
+.month p {
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.row {
+  background: #fff;
+}
+
+.calendar ul {
+  padding: 15px;
+  background: #f3f3f3;
+  margin: 0;
+}
+.calendar ul.weekdays {
+  padding: 10px 15px 3px;
+  background: #f9f9f9;
+}
+.calendar ul li {
+  list-style-type: none;
+  display: inline-block;
+  width: 12.8%;
+  height: 25px;
+  font-size: 12px;
+  color: #888;
+  text-align: center;
+  margin-bottom: 4px;
+}
+.calendar ul li span {
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.calendar ul li a {
+  color: #888;
+  display: block;
+  padding: 4px 0;
+}
+.calendar ul li a:hover {
+  border-radius: 5px;
+  background: #f9f9f9;
+  color: #008cba;
+}
+.calendar ul li a.active {
+  border-radius: 5px;
+  border: 2px solid #ddd;
+  padding: 2px 0;
+}
+
+/* Styles for Date Selector */
+$primary-color: #008cba;
+.month {
+  height: 110px;
+  width: 100%;
+  background: $primary-color;
+  overflow: hidden;
+  text-align: center;
+  
+  .back {
+    position: relative;
+    padding: 20px;
+    float: left;
+    height: 100%;
+    &:before {
+      content: "";
+      width: 0; 
+      height: 0; 
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent; 
+      border-right:8px solid #fff; 
+      position: absolute;
+      top: 46px;
+      left: 22px;
+      opacity: 0.5;
+    }
+  }  
+  
+  .next {
+    position: relative;
+    padding: 20px;
+    float: right;
+    height: 100%;
+    &:before {
+      content: "";
+      width: 0; 
+      height: 0; 
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent; 
+      border-left:8px solid #fff; 
+      position: absolute;
+      top: 46px;
+      right: 22px;
+      opacity: 0.5;
+    }
+  }      
+  h5 {
+    color: #fff;
+    margin: 42px 0 0;
+    text-transform: uppercase;
+  }
+  p {
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+  }
+}
+.calendar ul {
+  padding: 15px;
+  background: #f3f3f3;
+  margin: 0;
+  &.weekdays {
+    padding: 10px 15px 3px;
+    background: #f9f9f9;
+  }
+  li {
+    list-style-type: none;
+    display: inline-block;
+    width: 12.8%;
+    height: 25px;
+    font-size: 12px;
+    color: #888;
+    text-align: center;
+    margin-bottom: 4px;
+    
+    span {
+      font-size: 10px;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+    a {
+      color: #888;
+      display: block;
+      padding: 4px 0;
+      &:hover {
+        border-radius: 5px;
+        background: #f9f9f9;
+        color: $primary-color;
+      }
+      &.active {
+        border-radius: 5px;
+        border: 2px solid #ddd;
+        padding: 2px 0;
+      }
+    }
+  }
+}
+}
+
+.todolistside input[type="text"] {
+width: 466px;
+font-size: 24px;
+font-family: inherit;
+line-height: 1.4em;
+/*border: 0;*/
+outline: none;
+padding: 6px;
+border: 1px solid #999999;
+-webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0 inset;
+-moz-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0 inset;
+-ms-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0 inset;
+-o-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0 inset;
+box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0 inset;
+}
+ .todolistside input::-webkit-input-placeholder {
+ font-style: italic;
+}
+#main {
+display: none;
+}
+#todo-list {
+margin: 10px 0;
+padding: 0;
+list-style: none;
+}
+#todo-list li {
+padding: 18px 20px 18px 0;
+position: relative;
+/*position: center;*/
+font-size: 24px;
+/*
+border-bottom: 1px solid #cccccc;
+*/
+}
+#todo-list li:last-child {
+border-bottom: none;
+}
+#todo-list li.done label {
+color: #777777;
+text-decoration: line-through;
+}
+#todo-list .destroy {
+position: absolute;
+right: 5px;
+top: 20px;
+display: none;
+cursor: pointer;
+width: 20px;
+height: 20px;
+/*added*/
+background-position: right;
+/*added*/
+background: url(destroy.png) no-repeat;
+}
+#todo-list li:hover .destroy {
+display: block;
+}
+#todo-list .destroy:hover {
+background-position: 0 -20px;
+}
+#todo-list li.editing {
+border-bottom: none;
+margin-top: -1px;
+padding: 0;
+}
+#todo-list li.editing:last-child {
+margin-bottom: -1px;
+}
+#todo-list li.editing .edit {
+display: block;
+width: 444px;
+padding: 13px 15px 14px 20px;
+margin: 0;
+}
+#todo-list li.editing .view {
+display: none;
+}
+#todo-list li .view label {
+word-break: break-word;
+}
+#todo-list li .edit {
+display: none;
+}
+<ul id="todo-list">
+</ul><br type="_moz">
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="todos.js"></script>
+</body>
+</html>

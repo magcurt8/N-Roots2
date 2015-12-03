@@ -1,15 +1,16 @@
 <html>
 <head>
-<title>N-Roots</title>
+<title>N'Roots</title>
 <style type="text/css">
         body{
-        background-image: url("background.jpg"); 
+        background: #98a9d0;
         background-repeat: no-repeat;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size:cover;
         background-size: cover;
         font-family: "Lucida Sans Unicode";}
+      }
 </style>
 
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -32,7 +33,7 @@
   !-->
 
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-<script type="text/javascript">
+<script>
   $(document).ready(function(){
     $("#username").keyup(function(){
       console.log($("#username").val());
@@ -47,9 +48,7 @@
         console.dir(dat);
         $("#stuff").text(dat.name);
       },
-
     })
-
     });
     
   });
@@ -59,17 +58,13 @@
 </head>
 
 <body>
-<h1 style="text-align: center"><img src="NRoots_logo.png"/></h1>
-
-<div id = "test" style="width: 350px; margin-right: auto; margin-left: auto;"/>
-<h2>Please enter all info!:</h2>
+<h1 style="text-align: center"><img src="NRoots_logo.png" alt="logo" width="250px"/></h1>
+<div id = "test" style="width: 400px; margin-right: auto; margin-left: auto;"/>
+<h2>Sign-up!</h2>
 
 <form method="post" action="cgi-bin/register.py" id = "form">
 
-
-
 <label>Username:</label> <input name="username" id = "username" type=text size="30"/>
-<div id="stuff"></div>
 <br/>
 
 <label>Password:&nbsp</label> <input name="password" id = "password" type=password size="30"/>
@@ -89,13 +84,12 @@
 
 <label>AppleID:</label> <input name="appleid" type=text size="30"/>
 <br/>
+<br/>
 <input type="submit" id = "submit" value = "Register" disabled = "disabled"/>
 
 </form>
 
 <a href="login.html">Return to Login Page</a>
-
-
 
 </body>
 

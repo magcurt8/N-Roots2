@@ -3,12 +3,11 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>N'Roots | Contacts</title>
+<title>N'Roots | Applications</title>
 <link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
 </head>
 <body>
 <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
-
 <header class="header">
   <h1 class="main-header"></h1>
 
@@ -16,8 +15,8 @@
 
   <ul class="header-subnav">
     <li><a href="planner.html">Planner</a></li>
-    <li><a href="applications.html">Applications</a></li>
-    <li><a href="contact.html" class="is-active">Contacts</a></li>
+    <li><a href="applications.html" class="is-active">Applications</a></li>
+    <li><a href="contact.html">Contacts</a></li>
   </ul>
 
    <!--logout functionality !-->
@@ -72,52 +71,17 @@
   float: right;
 }
 
-#addInteraction{
-  float: right;
-  margin-top:-40px;
-  margin-right:20px;
-}
-
-.card {
-  font-family: 'Roboto', sans-serif;
-  overflow: hidden;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  color: #272727;
-  border-radius: 2px; }
-  .card .title {
-    line-height: 3rem;
-    font-size: 1.5rem;
-    font-weight: 300; }
-  .card .content {
-    padding: 1.3rem;
-    font-weight: 300;
-    border-radius: 0 0 2px 2px; }
-  .card p {
-    margin: 0; }
-  .card a {
-    color: #ffab40;
-    margin-right: 1.3rem;
-    transition: color 0.3s ease;
-    text-transform: uppercase;
-    text-decoration: none; }
-  .card .image {
-    position: relative; }
-    .card .image .title {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      padding: 1.3rem;
-      color: #fff; }
-    .card .image img {
-      border-radius: 2px 2px 0 0; }
 .listitem{
   padding-top: 10px;
     padding-right: 30px;
     padding-bottom: 10px;
     padding-left: 30px;
 }
-}
 
+#complete {
+  color: lightgrey;
+}
+}
 </style>
     </body>
 <body>
@@ -131,41 +95,51 @@
 <div class="media-object-section">
 </div>
 <div class="media-object-section">
-<h5>Kedar Shashidhar</h5>
+<h5>
+  Application 1 <br/>
+  Due Date: 
+</h5>
 </div>
 <hr>
+</div>
 
-</div>
-<div class="media-object">
-<div class="media-object-section">
-</div>
-<div class="media-object-section">
-<h5>Maggie Curtis</h5>
-</div>
-<hr>
-
-</div>
-<div class="media-object">
-<div class="media-object-section">
-</div>
-<div class="media-object-section">
-<h5>Gabe Issa</h5>
-</div>
-<hr>
-
-</div>
 <div class="media-object">
 <div class="media-object-section">
 </div>
 <div class="media-object-section">
 <h5>
-<input type="submit" value ="Add Contact"/>
+  Application 2 <br/>
+  Due Date: 
 </h5>
+</div>
+<hr>
+</div>
+
+<div class="media-object">
+<div class="media-object-section">
+</div>
+<div class="media-object-section">
+<h5>
+  Application 3 <br/>
+  Due Date: 
+</h5>
+</div>
+<hr>
+</div>
+
+<div class="media-object">
+<div class="media-object-section">
+</div>
+<div class="media-object-section">
+<h5>
+<input type="submit" value ="Add Application"/>
+</h5>
+</div>
 </div>
 
 </div>
 </div>
-</div>
+
 <div class="off-canvas-content" data-off-canvas-content>
 <div class="title-bar hide-for-large">
 <div class="title-bar-left">
@@ -174,47 +148,33 @@
 </div>
 </div>
 <div class="callout primary">
-<div class="row column">
-<h1>Kedar Shashidhar</h1>
-<h4>Creative Director - Blackout Games</h4>
-<h5>Email: <u>name@company.com</u></h5>
-<h5>Phone: (***)***-****</h5>
-</div>
-</div>
-
 
 <div class="row column">
-<h4>Interactions</h4>
-<h5><input id="addInteraction" type="submit" value ="+"/></h5>
-    <div class="card">
-      <div class="content">
-        <span class="title">You Replied To Kedar</span>
-        <p>When: Yesterday</p>
-        <p>Subject: Game Development Opportunities with Blackout Games</p>
-      </div>
-    </div>
+<h1>Application 1</h1>
+<h5>Contact: <u>FirstName LastName</u><br/>
+</h5>
+</div>
+</div>
 
-    <div class="card">
-      <div class="content">
-        <span class="title">Kedar Replied To You</span>
-        <p>When: Two Days Ago</p>
-        <p>Subject: Game Development Opportunities with Blackout Games </p>
-      </div>
-    </div>
 
-    <div class="card">
-      <div class="content">
-        <span class="title">You Sent Kedar An Email</span>
-        <p>When: More Than A Week Ago</p>
-        <p>Subject: Game Development Opportunities with Blackout Games</p>
-      </div>
-    </div>
+
+<div class="row" style="margin-left: 20px; margin-bottom: 500px">
+<h3>To-Do</h3>
+<ul style="padding-left:30px">
+  <li>Send Email to CEO</li>
+  <li>Complete Online Application</li>
+  <li id="complete">Send Cover Letter</li>
+  <li id="complete">Send Email to Family Friend</li>
+  <li id="complete">Write/Send CV</li>
+  <li id="complete">Write/Send Resume</li>
+</ul>
+
+
+
 </div>
-<hr>
-    <br/><br/>
 </div>
 </div>
-</div>
+
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
 <script>

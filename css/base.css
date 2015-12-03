@@ -1,22 +1,16 @@
-body {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: 300;
-    font-size: 12px;
-}
+
 a,
 a:link {
     outline: none;
 }
-h1 {
-    font-weight: 100;
-    font-size: 72px;
-    margin: 20px 0;
-}
+
 #container {
     width: 800px;
-    text-align: center;
+    text-align: left;
     margin: 20px auto;
 }
+
+
 input[type="text"] {
     height: 30px;
     width: 350px;

@@ -85,102 +85,100 @@
 }
 }
 </style>
-    </body>
+</body>
 <body>
 <div class="off-canvas-wrapper">
-<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
-<div class="off-canvas position-left reveal-for-large" id="my-info" data-off-canvas data-position="left">
-<div class="row column">
-<hr>
+  <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+    <div class="off-canvas position-left reveal-for-large" id="my-info" data-off-canvas data-position="left">
+      <div class="row column">
+        <hr>
+          <div class="media-object">
+            <div class="media-object-section">
+            </div>
+            <div class="media-object-section">
+              <h5>
+                Application 1 <br/>
+                Due Date: 
+              </h5>
+            </div>
+            <hr>
+          </div>
 
-<div class="media-object">
-<div class="media-object-section">
-</div>
-<div class="media-object-section">
-<h5>
-  Application 1 <br/>
-  Due Date: 
-</h5>
-</div>
-<hr>
-</div>
+          <div class="media-object">
+            <div class="media-object-section">
+            </div>
+              <div class="media-object-section">
+                <h5>
+                  Application 2 <br/>
+                  Due Date: 
+                </h5>
+              </div>
+            <hr>
+          </div>
 
-<div class="media-object">
-<div class="media-object-section">
-</div>
-<div class="media-object-section">
-<h5>
-  Application 2 <br/>
-  Due Date: 
-</h5>
-</div>
-<hr>
-</div>
+          <div class="media-object">
+            <div class="media-object-section">
+            </div>
+              <div class="media-object-section">
+                <h5>
+                  Application 3 <br/>
+                  Due Date: 
+                </h5>
+            </div>
+            <hr>
+          </div>
 
-<div class="media-object">
-<div class="media-object-section">
-</div>
-<div class="media-object-section">
-<h5>
-  Application 3 <br/>
-  Due Date: 
-</h5>
-</div>
-<hr>
-</div>
+          <div class="media-object">
+            <div class="media-object-section">
+            </div>
+            <div class="media-object-section">
+              <h5>
+                <input type="submit" value ="Add Application"/>
+              </h5>
+            </div>
+          </div>
 
-<div class="media-object">
-<div class="media-object-section">
-</div>
-<div class="media-object-section">
-<h5>
-<input type="submit" value ="Add Application"/>
-</h5>
-</div>
-</div>
+        </div>
+      </div>
 
-</div>
-</div>
+    <div class="off-canvas-content" data-off-canvas-content>
+      <div class="title-bar hide-for-large">
+        <div class="title-bar-left">
+          <button class="menu-icon" type="button" data-open="my-info"></button>
+          <span class="title-bar-title">Mike Mikerson</span>
+        </div>
+      </div>
 
-<div class="off-canvas-content" data-off-canvas-content>
-<div class="title-bar hide-for-large">
-<div class="title-bar-left">
-<button class="menu-icon" type="button" data-open="my-info"></button>
-<span class="title-bar-title">Mike Mikerson</span>
-</div>
-</div>
-<div class="callout primary">
+      <div class="callout primary">
+        <div class="row column">
+          <h1>Application 1</h1>
+          <h5>Contact: <u>FirstName LastName</u><br/></h5>
+        </div>
+      </div>
 
-<div class="row column">
-<h1>Application 1</h1>
-<h5>Contact: <u>FirstName LastName</u><br/>
-</h5>
-</div>
-</div>
-
-
-
-<div class="row" style="margin-left: 20px; margin-bottom: 500px">
-<h3>To-Do</h3>
-<ul style="padding-left:30px">
-  <li>Send Email to CEO</li>
-  <li>Complete Online Application</li>
-  <li id="complete">Send Cover Letter</li>
-  <li id="complete">Send Email to Family Friend</li>
-  <li id="complete">Write/Send CV</li>
-  <li id="complete">Write/Send Resume</li>
-</ul>
-
-
-
-</div>
-</div>
-</div>
+      <div class="row" style="margin-left: 20px; margin-bottom: 500px">
+        <div id="container">
+          <h3>To-Do</h3>
+          <form id="todo-form">
+              <input id="todo" type="text" />
+              <input id="submit" type="submit" value="Add to List">
+          </form>
+          <ul id="show-items"></ul>
+          <a href="#" id="clear-all">Clear All</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
 <script>
       $(document).foundation();
-    </script>
+</script>
+<script src="js/jquery-1.4.4.min.js"></script>
+<script src="js/jquery-ui-1.8.7.custom.min.js"></script>
+<script src="js/jquery.inlineedit.js"></script>
+<script src="js/pubsub.js"></script>
+<script src="js/base.js"></script>
 </body>
 </html>

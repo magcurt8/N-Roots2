@@ -124,9 +124,10 @@
 <div class="row column">
 
 <ul class="vertNav">
-  <li class="current"><a href="applications.html">Amazon<br/>Due Date: 3/4/14</a></li>
+  <li><a href="applications.html">Amazon<br/>Due Date: 3/4/14</a></li>
   <li><a href="UR.html">University of Rochester<br/>Due Date: 1/5/16</a></li>
-  <li><a href="RearchOpp.html">Research Opp<br/>Due Date: 10/7/16</a></li>
+  <li class="current"><a href="RearchOpp.html">Research Opp<br/>Due Date: 10/7/16</a></li>
+  <li>New Application<br/></li>
 </ul> 
 
 <div class="off-canvas-content" data-off-canvas-content>
@@ -147,22 +148,17 @@
 </div>
 </div>
 
-
-
-<div class="row" style="margin-left: 20px; margin-bottom: 500px">
-<h3>To-Do</h3>
-<ul style="padding-left:30px">
-  <li>Send Email to CEO</li>
-  <li>Complete Online Application</li>
-  <li id="complete">Send Cover Letter</li>
-  <li id="complete">Send Email to Family Friend</li>
-  <li id="complete">Write/Send CV</li>
-  <li id="complete">Write/Send Resume</li>
-</ul>
-
-
-
-</div>
+  <div class="row" style="margin-left: 20px; margin-bottom: 500px">
+    <div id="container">
+      <h3 id="todo_title">To-Do</h3>
+      <form id="todo-form">
+          <input id="todo" type="text" />
+          <input id="submit" type="submit" value="Add to List">
+      </form>
+      <ul id="show-items"></ul>
+      <a href="#" id="clear-all">Clear All</a>
+    </div>
+  </div>
 </div>
 </div>
 
@@ -170,6 +166,11 @@
 <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
 <script>
       $(document).foundation();
-    </script>
+</script>
+<script src="js/jquery-1.4.4.min.js"></script>
+<script src="js/jquery-ui-1.8.7.custom.min.js"></script>
+<script src="js/jquery.inlineedit.js"></script>
+<script src="js/pubsub.js"></script>
+<script src="js/base.js"></script>
 </body>
 </html>

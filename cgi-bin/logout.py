@@ -1,17 +1,9 @@
 #!/usr/bin/python
 
-#Daniel Harris, Gabe Issa, Ethan Lipkind
-
 import Cookie
-
 import cgi
-
 import os
-
-
 # set the cookie to expire
-
-
 #need to check the syntax of the expiration setting
 
 cookie_string = os.environ.get('HTTP_COOKIE')
@@ -31,8 +23,3 @@ print "<html>"
 print "<body>"
 print "</body>"
 print "</html>"
-
-
-
-
-

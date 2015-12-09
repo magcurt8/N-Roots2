@@ -1,0 +1,238 @@
+<!doctype html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>N'Roots | Planner</title>
+<link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+</head>
+
+<style>
+/*body {
+  align: center;
+}*/
+.header {
+  text-align: center;
+  background: #98a9d0;
+  background-size: cover;
+  padding: 4rem;
+  }
+.header-subnav {
+  float: none;
+  position: relative;
+  top: 4rem;
+  text-align: center;
+  margin-bottom: 0; 
+  height:8%;}
+
+.header-subnav li {
+    float: none;
+    display: inline-block; }
+
+.header-subnav li a {
+      padding: 0.9rem 1rem 0.75rem;
+      font-size: 0.875rem;
+      font-family: 'Arial';
+      color: #fff;
+      text-transform: uppercase;
+      display: block;
+      font-weight: bold;
+      letter-spacing: 1px; }
+
+.header-subnav li a.is-active {
+        background: #000d33;
+      }
+
+.header-subnav li a:hover {
+        background: #000d33;
+        color: #fff;
+        transition: all .25s ease-in-out; }
+
+#logout {
+  float:right;
+}
+.plannerpage {
+  width:100%;
+  height:300%;
+  background: #000d33;
+  padding-top:30px;
+  padding-right:30px;
+  padding-left:30px;
+  /*margin-right: 30px;*/
+}
+.todo-side{
+  float: left;
+  /*left:300px;*/
+  width:50%;
+  /*background: #f1f1f1;
+  box-shadow: 0 2px 2px #98a9d0;
+  padding-top: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+  padding-left: 30px;*/
+}
+.events-side{
+  background:#fff;
+  float:right;
+  width:50%;
+
+}
+.card {
+  font-family: 'Arial';
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 #000d33;
+  color: #272727;
+  border-radius: 2px; }
+  .card .title {
+    line-height: 3rem;
+    font-size: 1.5rem;
+    font-weight: 300; }
+  .card .content {
+    padding: 1.3rem;
+    font-weight: 300;
+    border-radius: 0 0 2px 2px; }
+  .card p {
+    margin: 0;}
+  .listitem{
+  padding-top: 10px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+}
+
+</style>
+
+<body>
+<!--<link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">!-->
+<header class="header">
+  <h1 class="main-header"></h1>
+  <h1> <img src="NRoots_logo.png" alt="logo" width="250px" height="50px"/></h1>
+  <form method="post" id = "logout" action="cgi-bin/logout.py">
+  <br/><input type="submit" value ="Log Out"/>
+  </form>
+  <ul class="header-subnav">
+    <li><a href="planner.html" class="is-active">Planner</a></li>
+    <li><a href="applications.html">Applications</a></li>
+    <li><a href="contact.html">Contacts</a></li>
+  </ul>
+</header>
+
+<div class= "plannerpage">
+  <div class="todo-side">
+    <link rel="stylesheet" href='todos copy.css'/>
+    <div class="todolist">
+      <div class="jquery-script-clear"></div>
+        <div id="todoapp">
+          <header>
+          <h1>To Do: General</h1>
+          <input id="new-todo" type="text" placeholder="What should you do?">
+          </header>
+          <section id='main'>
+          <ul id='todo-list'>
+          </ul>
+          </section>
+        </div>
+    </div>
+  </div>
+    <div class="events-side">
+       <div class="card">
+        <div class="content">
+          <span class="title">You Visited Marty</span>
+          <p>When: Yesterday</p>
+          <p>Subject: Advice for application</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="content">
+           <span class="title">Marty told you to register!</span>
+          <p>When: One Week Ago</p>
+          <p>Subject: Registration for graduate classes </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="content">
+          <span class="title">You had lunch with Suraj</span>
+        <p>When: 3 Days Ago</p>
+        <p>Subject: Discussed waiting period after interview</p>
+        </div>
+      </div>
+       <div class="card">
+        <div class="content">
+          <span class="title">You emailed Suraj</span>
+        <p>When: Three Weeks Ago</p>
+        <p>Subject: Asked for interview advice </p>
+        </div>
+      </div>
+      <div class="card">
+      <div class="content">
+         <span class="title">You had dinner with Suraj</span>
+        <p>When: 2 Months Ago</p>
+        <p>Subject: Asked for application advice </p>
+      </div>
+    </div>
+    <div class="card">
+        <div class="content">
+        <span class="title">You Emailed Michael</span>
+        <p>When: Yesterday</p>
+        <p>Subject: Attempt to become apprentice</p>
+        </div>
+      </div>
+       <div class="card">
+        <div class="content">
+          <span class="title">You Emailed Michael</span>
+        <p>When: One Week Ago</p>
+        <p>Subject: Attempt to become apprentice</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="content">
+          <span class="title">You Emailed Michael</span>
+        <p>When: 5 Weeks Ago</p>
+        <p>Subject: Attempt to become apprentice</p>
+        </div>
+      </div>
+       <div class="card">
+      <div class="content">
+        <span class="title">You Emailed Michael</span>
+        <p>When: 1 Year Ago</p>
+        <p>Subject: Attempt to become apprentice</p>
+      </div>
+    </div>
+    <div class="card">
+        <div class="content">
+          <span class="title">You Replied To Kedar</span>
+        <p>When: Yesterday</p>
+        <p>Subject: Game Development Opportunities with Blackout Games</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="content">
+          <span class="title">Kedar Replied To You</span>
+        <p>When: Two Days Ago</p>
+        <p>Subject: Game Development Opportunities with Blackout Games </p>
+        </div>
+      </div>
+       <div class="card">
+      <div class="content">
+         <span class="title">You Sent Kedar An Email</span>
+        <p>When: More Than A Week Ago</p>
+        <p>Subject: Game Development Opportunities with Blackout Games</p>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+<script>
+      $(document).foundation();
+</script>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="todos.js"></script>
+<script type="text/javascript"></script>
+<script src="js/base.js"></script>
+
+</body>
+</html>
